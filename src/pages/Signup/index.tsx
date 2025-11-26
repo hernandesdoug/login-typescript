@@ -1,4 +1,4 @@
-import Icone from '../../assets/icone.jpg';
+import Icone from '../../public/icone.jpg';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import api from "../../services/api";
