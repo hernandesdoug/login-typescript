@@ -6,8 +6,8 @@ import api from "../../services/api";
 import {Button} from "antd";
 
 function Signin() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   async function validateLogin() {
     try {

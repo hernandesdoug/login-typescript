@@ -1,4 +1,4 @@
-import Icone from '../../public/icone.jpg';
+import Icone from '../../assets/icone.jpg';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import api from "../../services/api";
@@ -6,13 +6,13 @@ import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Signup() {
-    const [fullName, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [dateBirth, setDate] = useState("");
-    const [phoneNumber, setPhone] = useState("");
-    const [password, setPassword] = useState("");
-    const [nationality, setNation] = useState("");
-    const [docType, setDocType] = useState("");
+    const [fullName, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [dateBirth, setDate] = useState<string>("");
+    const [phoneNumber, setPhone] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [nationality, setNation] = useState<string>("");
+    const [docType, setDocType] = useState<string>("");
 
     const navigate = useNavigate();
 
