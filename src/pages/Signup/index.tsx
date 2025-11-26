@@ -11,6 +11,7 @@ function Signup() {
     const [dateBirth, setDate] = useState<string>("");
     const [phoneNumber, setPhone] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [cfPassword, setCfPassword] = useState<string>("");
     const [nationality, setNation] = useState<string>("");
     const [docType, setDocType] = useState<string>("");
 
@@ -22,15 +23,17 @@ function Signup() {
     
     async function formUser() {
         try {
+            console.log(phoneNumber);
             const response = await api.post(`/`, { email: email, 
                 fullName: fullName,
                 dateBirth: dateBirth,
                 phoneNumber: phoneNumber,
                 nationality: nationality,
-                docType: docType,
+                documentType: docType,
+                cfPassword: cfPassword,
                 password: password });
                 console.log(response.data);
-            if (response.status === 200) {
+            if (response.status === 201) {
                 const id = response.data.id;
                 const url = `signon/${id}`;
                 window.location.href = url;
@@ -87,7 +90,7 @@ function Signup() {
                     </SelectOpt>
                     <br/>
                     <Labels htmlFor="password">Confirm Password</Labels>
-                    <Inputs type="password" placeholder="enter..." id="cf-password" value={password} onChange={e => setPassword(e.target.value)}  />
+                    <Inputs type="password" placeholder="enter..." id="cf-password" value={cfPassword} onChange={e => setCfPassword(e.target.value)}  />
                     <br/>
                     <BtnConfirm onClick={formUser}>Confirm</BtnConfirm>
                 </FormRight>      
